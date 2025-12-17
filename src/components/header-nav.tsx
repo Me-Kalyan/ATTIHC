@@ -74,7 +74,7 @@ export default function HeaderNav() {
                 asChild 
                 className={`rounded-full px-3 ${motionClass} ${tapClass} ${activeKey === "today" ? "bg-accent text-accent-foreground shadow-sm" : "text-muted-foreground hover:text-foreground hover:bg-muted/60"}`}
               >
-                <Link href="/today" prefetch={false} className="flex items-center gap-1.5">
+                <Link href="/" prefetch={false} className="flex items-center gap-1.5">
                   <Sun size={14} /> Today
                 </Link>
               </Button>

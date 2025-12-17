@@ -22,7 +22,7 @@ export default function Footer() {
         
         {/* Branding Section */}
         <div className="flex flex-col gap-2">
-          <Link href="/today" className="flex items-center gap-2 group w-fit" aria-label="ATTIHC Home">
+          <Link href="/" className="flex items-center gap-2 group w-fit" aria-label="ATTIHC Home">
             <Logo size="md" />
           </Link>
           <p className="text-sm text-muted-foreground max-w-[250px]">

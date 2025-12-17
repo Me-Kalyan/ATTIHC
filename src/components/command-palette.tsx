@@ -26,7 +26,7 @@ export default function CommandPalette() {
   const items: Item[] = useMemo(
     () => {
       const base: Item[] = [
-        { id: "today", label: "Go to Today", icon: Home, action: () => router.push("/today"), group: "Navigation" },
+        { id: "today", label: "Go to Today", icon: Home, action: () => router.push("/"), group: "Navigation" },
         { id: "history", label: "Open History", icon: Calendar, action: () => router.push("/history"), group: "Navigation" },
         { id: "settings", label: "Open Settings", icon: SettingsIcon, action: () => router.push("/settings"), group: "Navigation" },
         { id: "export", label: "Export JSON", icon: Download, action: () => router.push("/settings?open=export"), group: "Actions" },

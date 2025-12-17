@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "ATTIHC",
     short_name: "ATTIHC",
     description: "Daily focus tracker: Remember, Complete, Avoid, and Scratchpad.",
-    start_url: "/today",
+    start_url: "/",
     scope: "/",
     display: "standalone",
     orientation: "portrait",

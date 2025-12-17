@@ -44,7 +44,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
             variant="outline"
             asChild
           >
-            <Link href="/today" className="gap-2">
+            <Link href="/" className="gap-2">
               <Home size={14} /> Go Home
             </Link>
           </Button>

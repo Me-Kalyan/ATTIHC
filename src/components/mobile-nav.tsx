@@ -13,7 +13,7 @@ export default function MobileNav() {
   const navItems = [
     {
       name: "Today",
-      href: "/today",
+      href: "/",
       icon: Sun,
       match: (path: string) => !path.startsWith("/history") && !path.startsWith("/insights") && !path.startsWith("/settings")
     },
