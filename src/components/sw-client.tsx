@@ -25,19 +25,26 @@ export default function SWClient() {
           });
       } else {
         // In development, unregister any existing service workers to prevent caching issues
-        navigator.serviceWorker.getRegistrations().then((registrations) => {
-          for (const registration of registrations) {
-            registration.unregister().then(() => {
-              logger.info("Unregistered service worker in dev mode");
-              // Force reload if we found a service worker in dev to ensure clean state
-              if (window.location.hostname === 'localhost') {
-                 // Optional: window.location.reload(); 
-                 // For now, just logging is safer to avoid loops, but we can notify user
-                 logger.warn("Service Worker unregistered. If you see errors, please reload the page.");
+        // Wrap in try-catch to handle InvalidStateError during hot reloads
+        try {
+          navigator.serviceWorker.getRegistrations()
+            .then((registrations) => {
+              for (const registration of registrations) {
+                registration.unregister().catch((err) => {
+                  logger.warn("Failed to unregister SW", err);
+                });
+              }
+            })
+            .catch((error) => {
+              // Ignore InvalidStateError which can happen during rapid reloads
+              if (error?.name !== 'InvalidStateError') {
+                logger.warn("Failed to get SW registrations", error);
               }
             });
-          }
-        });
+        } catch (error) {
+           // Synchronous errors
+           console.debug("SW cleanup skipped:", error);
+        }
       }
     }
     if (typeof window !== "undefined") {
