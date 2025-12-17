@@ -1,7 +1,6 @@
 const CACHE_NAME = "attihc-v5";
 const ASSETS = [
   "/",
-  "/today",
   "/history",
   "/settings",
   "/offline.html",
