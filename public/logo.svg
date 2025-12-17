@@ -1,0 +1,12 @@
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .text { fill: #FAF9F7; }
+    }
+    @media (prefers-color-scheme: light) {
+      .text { fill: #166534; }
+    }
+  </style>
+  <text x="0" y="25" font-size="22" font-weight="800" font-family="sans-serif" fill="#166534" class="text">A</text>
+  <text x="32" y="25" font-size="22" font-weight="800" font-family="sans-serif" fill="#166534" text-anchor="end" class="text">C</text>
+</svg>

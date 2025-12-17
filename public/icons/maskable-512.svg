@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect x="0" y="0" width="512" height="512" fill="#FAF9F7"/>
+  <g transform="translate(64, 64) scale(12)">
+    <text x="0" y="25" font-size="22" font-weight="800" font-family="sans-serif" fill="#166534">A</text>
+    <text x="32" y="25" font-size="22" font-weight="800" font-family="sans-serif" fill="#166534" text-anchor="end">C</text>
+  </g>
+</svg>
