@@ -55,7 +55,7 @@ const useDefaultActions = (router: ReturnType<typeof useRouter>): Action[] => [
         end: "Quick",
         action: () => {
             // Toggle focus mode by scrolling to focus input
-            router.push('/today');
+            router.push('/');
             setTimeout(() => {
                 const focusInput = document.querySelector('[data-tutorial-id="focus"]') as HTMLElement;
                 focusInput?.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -161,53 +161,50 @@ function ActionSearchBar({
         []
     );
 
-    const handleKeyDown = useCallback(
-        (e: React.KeyboardEvent<HTMLInputElement>) => {
-            if (!result?.actions.length) {
-                 if (e.key === "Escape") {
-                     onClose?.();
-                 }
-                 return;
-            }
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (!result?.actions.length) {
+             if (e.key === "Escape") {
+                 onClose?.();
+             }
+             return;
+        }
 
-            switch (e.key) {
-                case "ArrowDown":
-                    e.preventDefault();
-                    setActiveIndex((prev) =>
-                        prev < result.actions.length - 1 ? prev + 1 : 0
-                    );
-                    break;
-                case "ArrowUp":
-                    e.preventDefault();
-                    setActiveIndex((prev) =>
-                        prev > 0 ? prev - 1 : result.actions.length - 1
-                    );
-                    break;
-                case "Enter":
-                    e.preventDefault();
-                    if (activeIndex >= 0 && result.actions[activeIndex]) {
-                        const action = result.actions[activeIndex];
-                        if (action.action) {
-                            action.action();
-                        }
-                        onClose?.();
-                    } else if (result.actions.length > 0) {
-                        // Execute first action if no selection
-                        const action = result.actions[0];
-                        if (action.action) {
-                            action.action();
-                        }
-                        onClose?.();
+        switch (e.key) {
+            case "ArrowDown":
+                e.preventDefault();
+                setActiveIndex((prev) =>
+                    prev < result.actions.length - 1 ? prev + 1 : 0
+                );
+                break;
+            case "ArrowUp":
+                e.preventDefault();
+                setActiveIndex((prev) =>
+                    prev > 0 ? prev - 1 : result.actions.length - 1
+                );
+                break;
+            case "Enter":
+                e.preventDefault();
+                if (activeIndex >= 0 && result.actions[activeIndex]) {
+                    const action = result.actions[activeIndex];
+                    if (action.action) {
+                        action.action();
                     }
-                    break;
-                case "Escape":
-                    setActiveIndex(-1);
                     onClose?.();
-                    break;
-            }
-        },
-        [result?.actions, activeIndex, onClose]
-    );
+                } else if (result.actions.length > 0) {
+                    // Execute first action if no selection
+                    const action = result.actions[0];
+                    if (action.action) {
+                        action.action();
+                    }
+                    onClose?.();
+                }
+                break;
+            case "Escape":
+                setActiveIndex(-1);
+                onClose?.();
+                break;
+        }
+    };
 
     const handleActionClick = useCallback((action: Action) => {
         if (action.action) {

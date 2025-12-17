@@ -4,11 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Sun, Calendar, Activity, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useAttihc } from "@/hooks/use-attihc";
 
 export default function MobileNav() {
   const pathname = usePathname();
-  const { settings } = useAttihc();
 
   const navItems = [
     {

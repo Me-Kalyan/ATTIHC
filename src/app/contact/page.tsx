@@ -44,7 +44,7 @@ export default function ContactPage() {
         <div className="space-y-4">
           <h1 className="text-4xl font-serif font-bold tracking-tight text-foreground">Contact Us</h1>
           <p className="text-lg text-muted-foreground">
-            We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export default function ContactPage() {
                 </div>
               </div>
               <p className="text-sm text-foreground/80 leading-relaxed">
-                Have suggestions for new features or improvements? We're always listening to our 
+                Have suggestions for new features or improvements? We&apos;re always listening to our 
                 community and evolving based on your feedback.
               </p>
             </div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-serif font-bold text-foreground">Message Sent Successfully!</h3>
               <p className="text-center text-muted-foreground max-w-md">
-                Thank you for reaching out. We've received your message and will get back to you within 
+                Thank you for reaching out. We&apos;ve received your message and will get back to you within 
                 24-48 hours.
               </p>
             </div>
@@ -103,7 +103,7 @@ export default function ContactPage() {
               <div className="space-y-2">
                 <h2 className="text-2xl font-serif font-bold text-foreground">Send us a message</h2>
                 <p className="text-sm text-muted-foreground">
-                  Fill out the form below and we'll be in touch soon.
+                  Fill out the form below and we&apos;ll be in touch soon.
                 </p>
               </div>
 
@@ -153,7 +153,7 @@ export default function ContactPage() {
                   value={formData.subject}
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 bg-background border-2 border-border rounded-lg focus:outline-none focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all text-foreground placeholder:text-muted-foreground"
-                  placeholder="What's this about?"
+                  placeholder="What&apos;s this about?"
                 />
               </div>
 
@@ -195,7 +195,7 @@ export default function ContactPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-0.5">•</span>
-                <span>Check your spam folder if you don't receive a response within 48 hours</span>
+                <span>Check your spam folder if you don&apos;t receive a response within 48 hours</span>
               </li>
             </ul>
           </div>

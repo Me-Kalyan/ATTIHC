@@ -19,13 +19,13 @@ export default function AboutPage() {
               Our Mission
             </h2>
             <p className="text-base text-foreground/90 leading-relaxed">
-              ATTIHC stands for <span className="font-semibold text-primary">"All The Things I Must Remember Today"</span>. 
+              ATTIHC stands for <span className="font-semibold text-primary">&quot;All The Things I Must Remember Today&quot;</span>. 
               We believe that clarity comes from simplicity. In a world filled with countless productivity tools that 
               promise everything, we chose to focus on what truly matters: helping you identify and remember the 
               essential things that will make your day meaningful.
             </p>
             <p className="text-base text-foreground/90 leading-relaxed">
-              Our mission is to strip away the complexity and give you a focused, beautiful space to define your day's 
+              Our mission is to strip away the complexity and give you a focused, beautiful space to define your day&apos;s 
               priorities. No overwhelming features, no endless lists—just the clarity you need to move forward with purpose.
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function AboutPage() {
               <div className="border-l-4 border-primary/40 pl-4 py-2">
                 <h3 className="font-semibold text-foreground mb-1">Beautiful by Design</h3>
                 <p className="text-sm text-muted-foreground">
-                  Productivity tools don't have to be boring. We believe in creating delightful experiences.
+                  Productivity tools don&apos;t have to be boring. We believe in creating delightful experiences.
                 </p>
               </div>
               <div className="border-l-4 border-primary/40 pl-4 py-2">
@@ -95,19 +95,19 @@ export default function AboutPage() {
             </h2>
             <p className="text-base text-foreground/90 leading-relaxed">
               ATTIHC is built with love for people who value intentionality over busyness, quality over quantity, 
-              and peace over chaos. Whether you're a student, professional, creative, or anyone seeking more clarity 
+              and peace over chaos. Whether you&apos;re a student, professional, creative, or anyone seeking more clarity 
               in your daily life—we built this for you.
             </p>
             <p className="text-base text-foreground/90 leading-relaxed">
-              We're constantly listening to our community and evolving based on real feedback. If you have ideas, 
-              suggestions, or just want to share your story, we'd love to hear from you.
+              We&apos;re constantly listening to our community and evolving based on real feedback. If you have ideas, 
+              suggestions, or just want to share your story, we&apos;d love to hear from you.
             </p>
           </div>
         </Card>
 
         <Card className="p-6 bg-primary/5 border-primary/20">
           <p className="text-center text-foreground/80 italic">
-            "Simplicity is the ultimate sophistication. Focus on what truly matters, and let everything else fade away."
+            &quot;Simplicity is the ultimate sophistication. Focus on what truly matters, and let everything else fade away.&quot;
           </p>
         </Card>
       </div>

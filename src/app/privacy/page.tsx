@@ -33,7 +33,7 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-base text-foreground/90 leading-relaxed">
               ATTIHC stores all user-generated content (tasks, notes, settings, history) locally in your 
-              browser's localStorage. This means:
+              browser&apos;s localStorage. This means:
             </p>
             <div className="space-y-2 ml-4">
               <div className="flex items-start gap-2">
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
           <div className="space-y-4">
             <h2 className="text-2xl font-serif font-bold text-foreground flex items-center gap-3">
               <Eye className="text-primary" size={28} />
-              2. What We Don't Collect
+              2. What We Don&apos;t Collect
             </h2>
             <p className="text-base text-foreground/90 leading-relaxed">
               Unlike many productivity apps, ATTIHC does not collect:
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
               </div>
               <div className="border-l-4 border-primary/40 pl-4 py-2">
                 <p className="text-sm font-semibold text-foreground">Location Data</p>
-                <p className="text-xs text-muted-foreground mt-1">We don't track where you are</p>
+                <p className="text-xs text-muted-foreground mt-1">We don&apos;t track where you are</p>
               </div>
               <div className="border-l-4 border-primary/40 pl-4 py-2">
                 <p className="text-sm font-semibold text-foreground">Device Information</p>
@@ -105,14 +105,14 @@ export default function PrivacyPage() {
               This is essential for the app to function properly.
             </p>
             <p className="text-base text-foreground/90 leading-relaxed">
-              We do not use tracking cookies or third-party analytics. The only data stored is what's 
+              We do not use tracking cookies or third-party analytics. The only data stored is what&apos;s 
               necessary for the application to remember your settings and tasks between sessions.
             </p>
             <div className="bg-secondary/30 border border-border/40 rounded-lg p-4 mt-4">
               <p className="text-sm text-foreground/80">
                 <span className="font-semibold">Technical Note:</span> localStorage is a browser feature 
                 that allows websites to store data locally. You can clear this data anytime through your 
-                browser's settings.
+                browser&apos;s settings.
               </p>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-base text-foreground/90 leading-relaxed">
               Since all data is stored locally on your device, the security of your information depends on 
-              your device's security measures. We recommend:
+              your device&apos;s security measures. We recommend:
             </p>
             <div className="space-y-3 mt-4">
               <div className="border-l-4 border-primary/40 pl-4 py-2">
@@ -184,12 +184,12 @@ export default function PrivacyPage() {
         <Card className="p-8 space-y-6">
           <div className="space-y-4">
             <h2 className="text-2xl font-serif font-bold text-foreground">
-              6. Children's Privacy
+              6. Children&apos;s Privacy
             </h2>
             <p className="text-base text-foreground/90 leading-relaxed">
-              ATTIHC is suitable for users of all ages. Since we don't collect any personal information, 
+              ATTIHC is suitable for users of all ages. Since we don&apos;t collect any personal information, 
               we do not knowingly collect data from children under 13. Parents and guardians are encouraged 
-              to supervise their children's use of the application.
+              to supervise their children&apos;s use of the application.
             </p>
           </div>
         </Card>
@@ -212,7 +212,7 @@ export default function PrivacyPage() {
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
                 <h3 className="font-semibold text-foreground mb-2">Delete Your Data</h3>
                 <p className="text-sm text-muted-foreground">
-                  Clear your browser's localStorage or use the app's reset feature to delete everything.
+                  Clear your browser&apos;s localStorage or use the app&apos;s reset feature to delete everything.
                 </p>
               </div>
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
@@ -238,8 +238,8 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-base text-foreground/90 leading-relaxed">
               We may update this Privacy Policy from time to time to reflect changes in our practices or 
-              for legal reasons. We will notify users of any significant changes by updating the "Last 
-              updated" date at the top of this page.
+              for legal reasons. We will notify users of any significant changes by updating the &quot;Last 
+              updated&quot; date at the top of this page.
             </p>
             <p className="text-base text-foreground/90 leading-relaxed">
               Continued use of ATTIHC after changes to this policy constitutes acceptance of those changes.
@@ -254,7 +254,7 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-base text-foreground/90 leading-relaxed">
               If you have any questions or concerns about this Privacy Policy or how we handle data, 
-              please reach out through our Contact page. We're committed to transparency and will respond 
+              please reach out through our Contact page. We&apos;re committed to transparency and will respond 
               to your inquiries promptly.
             </p>
           </div>
@@ -263,7 +263,7 @@ export default function PrivacyPage() {
         <Card className="p-6 bg-secondary/30 border-border/40">
           <p className="text-sm text-center text-muted-foreground">
             <span className="font-semibold text-foreground">Bottom line:</span> Your data is yours. 
-            We don't collect it, we don't see it, and we don't share it. ATTIHC is designed to respect 
+            We don&apos;t collect it, we don&apos;t see it, and we don&apos;t share it. ATTIHC is designed to respect 
             your privacy completely.
           </p>
         </Card>

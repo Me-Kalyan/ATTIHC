@@ -29,7 +29,7 @@ export default function TermsPage() {
               1. Acceptance of Terms
             </h2>
             <p className="text-base text-foreground/90 leading-relaxed">
-              By accessing and using ATTIHC ("the Service"), you accept and agree to be bound by the terms 
+              By accessing and using ATTIHC (&quot;the Service&quot;), you accept and agree to be bound by the terms 
               and provision of this agreement. If you do not agree to these Terms of Service, please do not 
               use the Service.
             </p>
@@ -112,8 +112,8 @@ export default function TermsPage() {
               5. Limitation of Liability
             </h2>
             <p className="text-base text-foreground/90 leading-relaxed">
-              ATTIHC is provided "as is" without warranty of any kind. We make no warranties, expressed or 
-              implied, regarding the Service's reliability, accuracy, or availability.
+              ATTIHC is provided &quot;as is&quot; without warranty of any kind. We make no warranties, expressed or 
+              implied, regarding the Service&apos;s reliability, accuracy, or availability.
             </p>
             <p className="text-base text-foreground/90 leading-relaxed">
               In no event shall ATTIHC, its directors, employees, partners, or affiliates be liable for any 
@@ -191,7 +191,7 @@ export default function TermsPage() {
             </h2>
             <p className="text-base text-foreground/90 leading-relaxed">
               If you have any questions about these Terms of Service, please contact us through our Contact 
-              page. We're happy to clarify any concerns you may have.
+              page. We&apos;re happy to clarify any concerns you may have.
             </p>
           </div>
         </Card>

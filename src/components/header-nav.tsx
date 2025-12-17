@@ -1,19 +1,17 @@
 'use client';
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { DayEntry } from "@/types";
-import { Calendar, Settings as SettingsIcon, Sun, Moon, Activity, Search, X, Clock, Star } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Calendar, Settings as SettingsIcon, Sun, Moon, Activity, Search } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
-import { useEffect, useMemo, useState, useRef } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useAttihc } from "@/hooks/use-attihc";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import ActionSearchBar from "@/components/features/ActionSearchBar";
 
 export default function HeaderNav() {
   const pathname = usePathname();
-  const router = useRouter();
-  const { settings, resolvedTheme, toggleTheme, days } = useAttihc();
+  const { settings, resolvedTheme, toggleTheme } = useAttihc();
   const [searchOpen, setSearchOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 

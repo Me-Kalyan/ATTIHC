@@ -35,8 +35,8 @@ export function GlobalShortcuts() {
       // Alt+N: New Note / Navigate to Today and focus Remember
       if (e.altKey && e.key === 'n') {
         e.preventDefault();
-        if (pathname !== '/today') {
-          router.push('/today');
+        if (pathname !== '/') {
+          router.push('/');
           // Focus logic needs to wait for navigation
           setTimeout(() => {
              // We need to target the textarea. In TodayPage, it's likely the first textarea or specifically named.
