@@ -44,6 +44,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://attihc.vercel.app"),
   title: {
     default: "ATTIHC - Focus, Organize, Achieve",
     template: "%s | ATTIHC",

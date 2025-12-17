@@ -1,4 +1,4 @@
-const CACHE_NAME = "attihc-v4";
+const CACHE_NAME = "attihc-v5";
 const ASSETS = [
   "/",
   "/today",
