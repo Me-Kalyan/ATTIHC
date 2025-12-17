@@ -44,11 +44,38 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "ATTIHC",
-  description: "Things I Must Remember Today",
+  title: {
+    default: "ATTIHC - Focus, Organize, Achieve",
+    template: "%s | ATTIHC",
+  },
+  description: "Advanced Task & Time Integrated Hub for Creators. Manage your tasks, track your time, and stay focused with ATTIHC.",
+  keywords: ["productivity", "task manager", "focus timer", "pomodoro", "eisenhower matrix", "time tracking", "pwa", "developer tools"],
+  authors: [{ name: "Kalyan" }],
+  creator: "Kalyan",
+  publisher: "ATTIHC",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "ATTIHC - Advanced Task & Time Integrated Hub for Creators",
+    description: "Manage your tasks, track your time, and stay focused with ATTIHC. The all-in-one productivity dashboard for creators.",
+    url: "https://attihc.vercel.app",
+    siteName: "ATTIHC",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ATTIHC - Focus, Organize, Achieve",
+    description: "The all-in-one productivity dashboard for creators. Features Priority Matrix, Focus Timer, and more.",
+    creator: "@Me-Kalyan",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
+    title: "ATTIHC",
   },
 };
 
