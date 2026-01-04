@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAttihc } from "@/hooks/use-attihc";
 import TodayCard from "@/components/today/TodayCard";
-import { Calendar, GripVertical } from "lucide-react";
+import { Calendar, GripVertical, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import dynamic from "next/dynamic";
@@ -16,7 +16,7 @@ const PriorityMatrix = dynamic(() => import("@/components/features/PriorityMatri
 
 
 import {
-  DndContext, 
+  DndContext,
   closestCenter,
   KeyboardSensor,
   PointerSensor,
@@ -54,9 +54,9 @@ function SortableItem({ id, children, className, ...props }: { id: string, child
   return (
     <div ref={setNodeRef} style={style} className={`relative group ${className}`} {...props}>
       {children}
-      <div 
-        {...attributes} 
-        {...listeners} 
+      <div
+        {...attributes}
+        {...listeners}
         className="absolute top-3 right-3 p-1.5 text-muted-foreground/30 group-hover:text-primary/70 cursor-grab active:cursor-grabbing opacity-0 group-hover:opacity-100 transition-all duration-200 hover:scale-110 bg-background/80 backdrop-blur-sm rounded-md border border-border/50 shadow-sm z-20"
       >
         <GripVertical size={16} />
@@ -79,6 +79,8 @@ export default function TodayPage() {
   const r3 = useRef<HTMLTextAreaElement>(null);
   const rFocus = useRef<HTMLInputElement>(null);
   const rScratch = useRef<HTMLTextAreaElement>(null);
+  const [clearPending, setClearPending] = useState(false);
+  const clearTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Drag and Drop State
   const [items, setItems] = useState<string[]>(DEFAULT_ORDER);
@@ -95,6 +97,26 @@ export default function TodayPage() {
       setItems(newItems);
     }
   }, [settings.layoutOrder]);
+
+  // Handle clear today with double-click confirmation
+  const handleClearToday = () => {
+    if (clearPending) {
+      // Second click - actually clear
+      updateToday({ focus: "", remember: "", complete: "", avoid: "", scratch: "" });
+      setClearPending(false);
+      if (clearTimeoutRef.current) {
+        clearTimeout(clearTimeoutRef.current);
+        clearTimeoutRef.current = null;
+      }
+    } else {
+      // First click - show pending state
+      setClearPending(true);
+      clearTimeoutRef.current = setTimeout(() => {
+        setClearPending(false);
+        clearTimeoutRef.current = null;
+      }, 10000); // Reset after 10 seconds
+    }
+  };
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -305,9 +327,21 @@ export default function TodayPage() {
       <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
           <h1 className="text-3xl sm:text-4xl font-serif font-bold tracking-tight text-foreground">Today</h1>
-          <span suppressHydrationWarning className="font-mono text-xs sm:text-sm font-medium text-muted-foreground flex items-center gap-2 bg-secondary/50 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-border/50 backdrop-blur-sm w-fit">
-            <Calendar size={14} className="text-primary" /> {today?.date ?? ""}
-          </span>
+          <div className="flex items-center gap-2">
+            <span suppressHydrationWarning className="font-mono text-xs sm:text-sm font-medium text-muted-foreground flex items-center gap-2 bg-secondary/50 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-border/50 backdrop-blur-sm w-fit">
+              <Calendar size={14} className="text-primary" /> {today?.date ?? ""}
+            </span>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleClearToday}
+              title={clearPending ? "Click again to confirm" : "Clear all fields"}
+              className={`p-2 h-auto transition-all duration-200 ${clearPending ? "text-destructive bg-destructive/10 animate-pulse" : "text-muted-foreground hover:text-destructive hover:bg-destructive/10"}`}
+            >
+              <Trash2 size={14} />
+              {clearPending && <span className="ml-1 text-xs">Confirm?</span>}
+            </Button>
+          </div>
         </div>
 
         <Card className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4 sm:p-5 border-border/60 shadow-md glassmorphism card-hover-lift">
@@ -331,7 +365,7 @@ export default function TodayPage() {
                 <div className="h-2.5 sm:h-3 flex-1 rounded-full bg-secondary/50 overflow-hidden relative">
                   <div
                     className="h-full bg-linear-to-r from-primary via-primary/90 to-primary transition-all duration-700 ease-out progress-glow relative"
-                    style={{ 
+                    style={{
                       width: `${pct}%`,
                       backgroundSize: '200% 100%',
                       animation: pct > 0 && pct < 100 ? 'shimmer 3s ease-in-out infinite' : 'none'
@@ -345,13 +379,13 @@ export default function TodayPage() {
         </Card>
       </div>
 
-      <DndContext 
-        sensors={sensors} 
-        collisionDetection={closestCenter} 
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCenter}
         onDragEnd={handleDragEnd}
       >
-        <SortableContext 
-          items={items} 
+        <SortableContext
+          items={items}
           strategy={rectSortingStrategy}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-start">
